@@ -1,0 +1,682 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>SiriusXM Media · Interactive Media Kit 2025 (concept)</title>
+<meta name="description" content="Concept: an interactive version of the SiriusXM Media Kit 2025 that builds the case for your audience. Unsolicited spec work by Mamman Ali.">
+<meta name="robots" content="noindex">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --bg:#0a0a0f; --bg2:#101018; --card:#14141d; --line:#23232f; --line2:#2e2e3c;
+  --fg:#f4f4f8; --muted:#a3a3b5; --dim:#6f6f84;
+  --accent:#5b7cff; --accent-ink:#07070b; --accent-soft:rgba(91,124,255,.14);
+  --radius:18px; --gutter:clamp(16px,4vw,48px); --max:1200px;
+  --head:"Inter Tight",Inter,system-ui,sans-serif; --body:Inter,system-ui,-apple-system,sans-serif;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--fg);font:16px/1.55 var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+img{max-width:100%;display:block}
+a{color:inherit}
+button{font:inherit;color:inherit}
+h1,h2,h3{font-family:var(--head);letter-spacing:-.02em;margin:0;line-height:1.05}
+h2{font-size:clamp(30px,4.6vw,52px);font-weight:800}
+h3{font-size:clamp(20px,2.2vw,24px);font-weight:700}
+p{margin:0}
+.wrap{max-width:var(--max);margin:0 auto;padding-inline:var(--gutter)}
+section{padding-block:clamp(56px,9vw,112px)}
+.eyebrow{font:600 12px/1 var(--body);letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:18px}
+.lede{color:var(--muted);font-size:clamp(16px,1.4vw,19px);max-width:62ch;margin-top:18px}
+:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:6px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.logo{height:var(--h,24px);width:auto;max-width:100%;object-fit:contain}
+
+/* nav */
+.nav{position:sticky;top:0;z-index:20;backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);background:rgba(10,10,15,.72);border-bottom:1px solid var(--line)}
+.nav .wrap{display:flex;align-items:center;justify-content:space-between;gap:16px;height:64px}
+.brand{display:flex;align-items:center;gap:14px;text-decoration:none;min-width:0}
+.brand img{height:30px;width:auto}
+.brand span{display:none;color:var(--muted);font-size:13px;font-weight:500;border-left:1px solid var(--line2);padding-left:14px;white-space:nowrap}
+.nav ul{display:none;list-style:none;margin:0;padding:0;gap:26px}
+.nav li a{text-decoration:none;color:var(--muted);font-size:14px;font-weight:500}
+.nav li a:hover{color:var(--fg)}
+.btn{display:inline-flex;align-items:center;gap:10px;background:var(--accent);color:var(--accent-ink);border:0;border-radius:999px;padding:14px 22px;font-weight:600;font-size:15px;text-decoration:none;cursor:pointer;transition:transform .15s ease,filter .15s ease}
+.btn:hover{filter:brightness(1.08)}
+.btn:active{transform:scale(.98)}
+.btn.small{padding:9px 16px;font-size:13px;white-space:nowrap}
+@media(min-width:860px){.nav ul{display:flex}.brand span{display:inline}}
+
+/* hero */
+.hero{position:relative;padding-block:clamp(48px,7vw,110px) clamp(72px,10vw,150px);overflow:hidden}
+.hero-grid{display:grid;gap:40px;position:relative;z-index:1}
+.hero h1{font-size:clamp(40px,6.2vw,88px);font-weight:800;max-width:13ch}
+.hero h1 em{font-style:normal;color:var(--accent)}
+.hero .big{display:flex;flex-wrap:wrap;align-items:baseline;gap:10px 18px;margin-top:30px}
+.hero .big b{font:800 clamp(64px,10vw,132px)/.9 var(--head);letter-spacing:-.04em}
+.hero .big span{color:var(--muted);font-size:clamp(16px,1.5vw,19px);max-width:22ch}
+.hero .cta{margin-top:34px;display:flex;flex-wrap:wrap;gap:14px;align-items:center}
+.hero .note{color:var(--dim);font-size:13px}
+.hero-art{display:flex;justify-content:center}
+.hero-art :is(img,video){width:min(72vw,300px);height:auto;aspect-ratio:1;border-radius:50%;object-fit:cover;background:var(--card);box-shadow:0 0 0 10px rgba(91,124,255,.12),0 40px 90px -30px rgba(91,124,255,.55)}
+@media(min-width:900px){
+  .hero-grid{grid-template-columns:1.15fr .85fr;align-items:center}
+  .hero-art :is(img,video){width:min(100%,520px)}
+}
+.eq{position:absolute;inset:auto 0 0 0;height:clamp(90px,16vw,220px);display:flex;align-items:flex-end;gap:4px;padding-inline:var(--gutter);pointer-events:none;opacity:.5;mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent);-webkit-mask-image:linear-gradient(to right,transparent,#000 12%,#000 88%,transparent)}
+.eq i{flex:1;background:linear-gradient(to top,var(--accent),rgba(91,124,255,.15));border-radius:3px 3px 0 0;height:var(--h);transform-origin:bottom;animation:eq var(--d) ease-in-out var(--o) infinite alternate}
+@keyframes eq{from{transform:scaleY(.25)}to{transform:scaleY(1)}}
+
+/* dividers */
+.divider{display:flex;justify-content:center;align-items:flex-end;gap:5px;height:28px;padding-block:0}
+.divider i{width:3px;background:var(--line2);border-radius:2px;height:var(--h)}
+.divider i:nth-child(odd){background:var(--accent);opacity:.7}
+
+/* stats band */
+.band{background:var(--bg2);border-block:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(2,1fr);gap:32px 20px}
+.stat b{display:block;font:800 clamp(40px,5.6vw,72px)/1 var(--head);letter-spacing:-.04em}
+.stat .l{display:block;margin-top:8px;font-weight:500}
+.stat .w{display:flex;align-items:center;height:36px;margin-top:12px}
+.stat .w img{max-height:100%;width:auto;opacity:.92}
+@media(min-width:700px){.stats{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1000px){.stats{grid-template-columns:repeat(5,1fr);gap:24px}.stat .l{min-height:48px}}
+
+/* picker */
+.chips{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.chip{display:inline-flex;align-items:center;gap:10px;border:1px solid var(--line2);background:var(--card);border-radius:999px;padding:6px 18px 6px 6px;font-weight:500;font-size:15px;cursor:pointer;transition:background .18s,border-color .18s,color .18s,transform .12s}
+.chip img{width:32px;height:32px;border-radius:50%;object-fit:cover;flex:none}
+.chip:hover{border-color:var(--accent)}
+.chip[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+.chip[aria-pressed="true"] img{box-shadow:0 0 0 2px var(--accent-ink)}
+.chip:active{transform:scale(.97)}
+.picker-hint{color:var(--dim);font-size:13px;margin-top:12px}
+.results{margin-top:32px;border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:clamp(20px,3vw,36px);transition:opacity .18s ease,transform .18s ease}
+.results.is-swapping{opacity:0;transform:translateY(8px)}
+.rhead{display:flex;flex-direction:column-reverse;gap:22px}
+.results .why{font:600 clamp(19px,2.2vw,26px)/1.3 var(--head);letter-spacing:-.01em;max-width:40ch}
+.results .why:before{content:"";display:block;width:36px;height:3px;background:var(--accent);margin-bottom:16px;border-radius:2px}
+.results .for{color:var(--muted);font-size:14px;margin-top:10px}
+.faces{display:flex;flex:none}
+.faces img{width:96px;height:96px;border-radius:22px;object-fit:cover;border:3px solid var(--card);box-shadow:0 10px 30px -10px rgba(0,0,0,.6)}
+.faces img+img{margin-left:-22px}
+@media(min-width:760px){.rhead{flex-direction:row;justify-content:space-between;align-items:center}.faces img{width:150px;height:150px;border-radius:30px}.faces img+img{margin-left:-34px}}
+.rgrid{display:grid;gap:28px;margin-top:30px}
+.rcol h4{font:600 12px/1 var(--body);letter-spacing:.12em;text-transform:uppercase;color:var(--dim);margin:0 0 14px}
+.rank{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.rank li{display:grid;grid-template-columns:30px 1fr;gap:10px;padding:14px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.rank .n{font:800 20px/1 var(--head);color:var(--accent)}
+.rank .p{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-weight:600;min-height:22px}
+.rank .p img{height:18px;width:auto;max-width:150px}
+.rank .both{display:inline-block;font-size:11px;font-weight:600;color:var(--accent);background:var(--accent-soft);padding:3px 8px;border-radius:999px}
+.rank .r{color:var(--muted);font-size:14px;margin-top:6px}
+.sl{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.sl li{border-left:2px solid var(--accent);padding-left:14px}
+.sl b{display:block;font:800 clamp(24px,2.6vw,32px)/1.05 var(--head);letter-spacing:-.03em}
+.sl span{display:block;color:var(--muted);font-size:14px;margin-top:3px}
+.sl small{display:block;color:var(--dim);font-size:12px;margin-top:2px}
+.sol{list-style:none;margin:0;padding:0;display:grid;gap:10px}
+.sol li{padding:12px 14px;border:1px solid var(--line);border-radius:12px;background:var(--bg)}
+.sol .cat{font-size:11px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--accent)}
+.sol .t{font-weight:600;margin-top:3px}
+.sol .d{color:var(--muted);font-size:14px;margin-top:2px}
+@media(min-width:900px){.rgrid{grid-template-columns:1.1fr 1fr 1fr;gap:32px}}
+
+/* moments */
+.moments{display:grid;gap:28px;margin-top:34px}
+.ring{display:flex;flex-direction:column;align-items:center;gap:22px}
+.core{width:150px;aspect-ratio:1;border-radius:50%;overflow:hidden;border:3px solid var(--accent);box-shadow:0 0 0 10px var(--accent-soft);flex:none}
+.core{position:relative}
+.core img,.core video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.mlist{display:flex;flex-wrap:wrap;justify-content:center;gap:10px;list-style:none;margin:0;padding:0}
+.mbtn{border:1px solid var(--line2);background:var(--card);border-radius:999px;padding:10px 16px;font-weight:500;font-size:14px;cursor:pointer;transition:background .18s,border-color .18s,color .18s}
+.mbtn:hover,.mbtn:focus-visible{border-color:var(--accent)}
+.mbtn[aria-pressed="true"]{background:var(--accent);border-color:var(--accent);color:var(--accent-ink);font-weight:600}
+.mread{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:clamp(22px,3vw,36px)}
+.mread .m{color:var(--muted);font-weight:500}
+.mread b{display:block;font:800 clamp(72px,12vw,140px)/.95 var(--head);letter-spacing:-.05em;margin-top:6px}
+.mread .who{display:flex;align-items:center;gap:10px;flex-wrap:wrap;font-size:clamp(16px,1.6vw,20px);margin-top:12px}
+.mread .who img{height:22px;width:auto}
+.mbar{height:6px;background:var(--line);border-radius:3px;margin-top:22px;overflow:hidden}
+.mbar i{display:block;height:100%;background:var(--accent);border-radius:3px;width:var(--w);transition:width .5s cubic-bezier(.2,.8,.2,1)}
+.mread small{display:block;color:var(--dim);font-size:12px;margin-top:14px}
+@media(min-width:900px){
+  .moments{grid-template-columns:1fr 1fr;align-items:center}
+  .ring{position:relative;display:block;aspect-ratio:1;max-width:560px;margin:0 auto;width:100%}
+  .ring .mlist{position:absolute;inset:0;display:block}
+  .ring .mlist li{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%) rotate(calc(var(--i)*51.43deg - 90deg)) translate(min(230px,21vw)) rotate(calc(var(--i)*-51.43deg + 90deg))}
+  .core{position:absolute;inset:50% auto auto 50%;width:46%;transform:translate(-50%,-50%)}
+}
+
+/* platforms */
+.pgrid{display:grid;gap:16px;margin-top:34px}
+.pcard{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);padding:16px 22px 22px;display:flex;flex-direction:column;gap:18px}
+.pphoto{aspect-ratio:16/10;border-radius:12px;overflow:hidden;background:var(--bg)}
+.pphoto img{width:100%;height:100%;object-fit:cover}
+.pwall{aspect-ratio:16/10;border-radius:12px;background:var(--bg);display:grid;grid-template-columns:repeat(3,1fr);gap:6px;padding:10px}
+.pwall div{display:flex;align-items:center;justify-content:center;padding:6px}
+.pwall img{max-height:22px;max-width:100%;width:auto;opacity:.9}
+.phead .net{height:22px;display:flex;align-items:center;margin-bottom:12px}
+.phead .net img{height:22px;width:auto;opacity:.85}
+.phead .plogo{height:var(--h,26px);width:auto;max-width:82%}
+.pcard .tag{color:var(--muted);font-size:14px;margin-top:10px}
+.phero{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.phero div{background:var(--bg);border-radius:12px;padding:14px}
+.phero b{display:block;font:800 clamp(26px,2.4vw,34px)/1 var(--head);letter-spacing:-.03em}
+.phero span{display:block;color:var(--muted);font-size:12.5px;margin-top:6px;line-height:1.4}
+.demo{display:grid;grid-template-columns:1fr 1fr;gap:14px 12px;border-top:1px solid var(--line);padding-top:16px;margin:0}
+.demo dt{font-size:11px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);font-weight:600}
+.demo dd{margin:3px 0 0;font-size:14px;font-weight:500}
+.demo dd.none{color:var(--dim);font-weight:400}
+details{border-top:1px solid var(--line);padding-top:12px}
+summary{cursor:pointer;font-weight:600;font-size:14px;list-style:none;display:flex;justify-content:space-between;align-items:center;color:var(--accent)}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font:600 20px/1 var(--head);transition:transform .2s}
+details[open] summary:after{transform:rotate(45deg)}
+.er{margin-top:14px;display:grid;gap:14px}
+.er h5{margin:0 0 8px;font:600 11px/1 var(--body);letter-spacing:.1em;text-transform:uppercase;color:var(--dim)}
+.er li{list-style:none;margin:0 0 8px}
+.er ul{margin:0;padding:0}
+.er b{font:800 20px/1.1 var(--head);letter-spacing:-.02em;display:block}
+.er span{display:block;color:var(--muted);font-size:13.5px;margin-top:2px}
+@media(min-width:640px){.pgrid{grid-template-columns:1fr 1fr}}
+@media(min-width:1100px){.pgrid{grid-template-columns:repeat(4,1fr)}}
+
+/* partners strip */
+.partners{display:grid;gap:12px;margin-top:20px}
+.partners article{border:1px solid var(--line);border-radius:14px;overflow:hidden;background:var(--bg)}
+.partners .ph{aspect-ratio:16/9;overflow:hidden}
+.partners .ph img{width:100%;height:100%;object-fit:cover}
+.partners .pb{padding:16px}
+.partners .pb img{height:30px;width:auto;max-width:140px;margin-bottom:14px;opacity:.95}
+.partners b{font:800 28px/1 var(--head);letter-spacing:-.03em;display:block}
+.partners span{display:block;font-size:13px;color:var(--muted);margin-top:6px}
+.partners em{display:block;font-style:normal;font-weight:600;font-size:13px;margin-top:10px}
+@media(min-width:640px){.partners{grid-template-columns:repeat(3,1fr)}}
+@media(min-width:1000px){.partners{grid-template-columns:repeat(5,1fr)}}
+
+/* services */
+.sgrid{display:grid;gap:16px;margin-top:34px}
+.scard{border:1px solid var(--line);border-radius:var(--radius);background:var(--card);overflow:hidden;display:flex;flex-direction:column}
+.scard .ph{aspect-ratio:16/9;overflow:hidden;background:var(--bg)}
+.scard .ph img{width:100%;height:100%;object-fit:cover;object-position:50% 25%}
+.scard .body{padding:22px 24px 24px}
+.scard h3{font-size:22px}
+.scard .marks{display:flex;flex-wrap:wrap;align-items:center;gap:14px 22px;margin-top:14px;min-height:24px}
+.scard .marks img{height:22px;width:auto;opacity:.92}
+.scard .marks img.tall{height:40px}
+.scard p{color:var(--muted);font-size:14px;margin-top:12px}
+.scard ul{margin:16px 0 0;padding:0 0 0 18px;color:var(--muted);font-size:14px;display:grid;gap:6px}
+.scard .tags{display:flex;flex-wrap:wrap;gap:8px;margin-top:16px}
+.scard .tags span{font-size:12.5px;padding:6px 10px;border:1px solid var(--line2);border-radius:999px;color:var(--fg)}
+.scard .two{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:16px}
+.scard .two b{font:800 30px/1 var(--head);letter-spacing:-.03em;display:block}
+.scard .two span{display:block;color:var(--muted);font-size:12.5px;margin-top:5px}
+.proof{margin-top:20px;border:1px solid var(--line);border-radius:12px;padding:16px 20px;display:flex;flex-wrap:wrap;gap:10px 28px;color:var(--muted);font-size:14px}
+.proof b{color:var(--fg);font-family:var(--head);font-weight:800;font-size:18px;margin-right:6px;letter-spacing:-.02em}
+@media(min-width:760px){.sgrid{grid-template-columns:1fr 1fr}}
+
+/* closing */
+.close .wrap{display:grid;gap:36px;justify-items:center;text-align:center}
+.close img{width:min(60vw,220px);aspect-ratio:1;border-radius:50%;object-fit:cover;box-shadow:0 0 0 10px var(--accent-soft)}
+.close h2{font-size:clamp(36px,6vw,72px);max-width:16ch}
+.close .lede{text-align:center}
+.close .btn{margin-top:30px;font-size:17px;padding:18px 30px}
+@media(min-width:900px){.close .wrap{grid-template-columns:auto 1fr;justify-items:start;text-align:left;align-items:center;gap:56px}.close img{width:300px}.close .lede{text-align:left}}
+
+/* footer */
+footer{border-top:1px solid var(--line);padding-block:40px 60px;color:var(--muted);font-size:14px}
+.disclaimer{border:1px solid var(--accent);background:var(--accent-soft);border-radius:12px;padding:18px 20px;color:var(--fg);font-weight:500;line-height:1.5}
+footer details{border:0;margin-top:22px;padding:0}
+footer summary{color:var(--muted);justify-content:flex-start;gap:10px}
+footer ol{margin:12px 0 0;padding-left:20px;font-size:13px;color:var(--dim);display:grid;gap:6px}
+footer .meta{margin-top:22px;font-size:13px;color:var(--dim)}
+
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*:before,*:after{animation:none!important;transition:none!important}
+  .results.is-swapping{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap">
+    <a class="brand" href="#top"><img src="assets/logo-siriusxm-media.png" alt="SiriusXM Media"><span>Media Kit 2025 · interactive concept</span></a>
+    <ul>
+      <li><a href="#audience">Audience</a></li>
+      <li><a href="#moments">Moments</a></li>
+      <li><a href="#platforms">Platforms</a></li>
+      <li><a href="#services">Services</a></li>
+    </ul>
+    <a class="btn small" href="#audience">Pick an audience</a>
+  </div>
+</header>
+
+<section class="hero" id="top">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="eyebrow">The largest ad-supported audio marketplace in the US</p>
+      <h1>Serious about audio.<br>Serious about <em>your</em> audience.</h1>
+      <div class="big"><b>160M</b><span>monthly listeners across SiriusXM, Pandora, SoundCloud and the SiriusXM Podcast Network.</span></div>
+      <div class="cta">
+        <a class="btn" href="#audience">Tell us who you want to reach ↓</a>
+        <span class="note">The kit builds the case for you. No form, no PDF.</span>
+      </div>
+    </div>
+    <div class="hero-art">
+      <video id="heroVideo" autoplay muted loop playsinline preload="auto" poster="assets/hero-poster.jpg" width="720" height="720" aria-label="A young listener in yellow headphones nodding to the beat">
+        <source src="assets/hero.mp4" type="video/mp4">
+        <img src="assets/hero-cover.jpg" alt="" width="821" height="821">
+      </video>
+    </div>
+  </div>
+  <div class="eq" id="heroEq" aria-hidden="true"></div>
+</section>
+
+<section class="band">
+  <div class="wrap">
+    <div class="stats" id="stats"></div>
+  </div>
+</section>
+
+<section id="audience">
+  <div class="wrap">
+    <p class="eyebrow">Audience picker</p>
+    <h2>Who are you trying to reach?</h2>
+    <p class="lede">Pick one audience, or combine two. The ranking, the proof points and the recommended solutions update instantly, using only figures from the 2025 kit.</p>
+    <div class="chips" id="chips" role="group" aria-label="Audience"></div>
+    <p class="picker-hint" id="hint">Select up to two.</p>
+    <div class="results" id="results" aria-live="polite"></div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<section id="moments">
+  <div class="wrap">
+    <p class="eyebrow">Listening moments</p>
+    <h2>Meet listeners at every moment</h2>
+    <p class="lede">SiriusXM Media is the soundtrack to everyday activities. Tap a moment to see which platform owns it.</p>
+    <div class="moments">
+      <div class="ring">
+        <div class="core">
+          <img src="assets/moments-poster.jpg" alt="" loading="lazy">
+          <video id="gazeVideo" muted playsinline preload="auto" disablepictureinpicture poster="assets/moments-poster.jpg" width="720" height="720" aria-hidden="true" tabindex="-1">
+            <source src="assets/woman-look-scrub.mp4" type="video/mp4">
+          </video>
+        </div>
+        <ul class="mlist" id="mlist"></ul>
+      </div>
+      <div class="mread" id="mread"></div>
+    </div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<section id="platforms">
+  <div class="wrap">
+    <p class="eyebrow">The portfolio</p>
+    <h2>Four platforms, one buy</h2>
+    <p class="lede">Demographics and receptivity for each platform, as published in the kit. Expand a card for engagement and receptivity.</p>
+    <div class="pgrid" id="pgrid"></div>
+    <p class="eyebrow" style="margin-top:44px">Streaming's most diverse publishers</p>
+    <p class="lede" style="margin-top:0">A curated audio marketplace reaching <strong style="color:var(--fg)">+30M additional monthly listeners</strong>, alongside the Streaming Network's <strong style="color:var(--fg)">92M monthly digital audio listeners</strong>.</p>
+    <div class="partners" id="partners"></div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<section id="services">
+  <div class="wrap">
+    <p class="eyebrow">Beyond the media</p>
+    <h2>In-house, end to end</h2>
+    <div class="sgrid" id="sgrid"></div>
+    <div class="proof" id="proof"></div>
+  </div>
+</section>
+
+<div class="divider" aria-hidden="true"></div>
+
+<section class="close">
+  <div class="wrap">
+    <img src="assets/cta-portrait.jpg" alt="" loading="lazy">
+    <div>
+      <p class="eyebrow">Next step</p>
+      <h2>Build your audio plan</h2>
+      <p class="lede">Audience, platforms, moments, solutions: the case is already on this page. Turn it into a plan.</p>
+      <a class="btn" href="#audience" id="ctaBtn">Build your audio plan</a>
+    </div>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="disclaimer">Concept by Mamman Ali — unsolicited spec work, not affiliated with or endorsed by SiriusXM Media. Data from SiriusXM Media Kit 2025.</div>
+    <details>
+      <summary>Sources, as numbered in the kit</summary>
+      <ol id="sources"></ol>
+    </details>
+    <p class="meta">Every figure is transcribed from the 26-page 2025 media kit PDF and attributed to the platform it was published against. Logos, wordmarks and photography are reproduced from that kit and remain the property of SiriusXM Media, its partners and their licensors; they appear here only to illustrate the concept.</p>
+  </div>
+</footer>
+
+<script src="data.js"></script>
+<script>
+(function(){
+  const K = window.KIT, $ = s => document.querySelector(s);
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const esc = s => String(s).replace(/[&<>"]/g, c => ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;'}[c]));
+  const IMG = (f, alt, cls, h) => `<img src="assets/${f}" alt="${esc(alt)}"${cls ? ` class="${cls}"` : ''}${h ? ` style="--h:${h}px"` : ''} loading="lazy" decoding="async">`;
+
+  /* ---- assets lifted from the kit PDF ---- */
+  const LOGO = { siriusxm: 'logo-siriusxm.png', pandora: 'logo-pandora.png', soundcloud: 'logo-soundcloud.png', podcasts: 'logo-podcast.png', streaming: 'logo-streaming.png',
+    sbs: 'logo-sbs.png', audiomack: 'logo-audiomack.png', idobi: 'logo-idobi.png', sonos: 'logo-sonos.png', dailymotion: 'logo-dailymotion.png' };
+  const WHO = { 'SiriusXM Media': 'logo-siriusxm-media.png', 'SiriusXM': 'logo-siriusxm.png', 'SiriusXM Streaming Network': 'logo-streaming.png', 'SiriusXM Podcast Network': 'logo-podcast.png', 'SiriusXM Podcast': 'logo-podcast.png', 'Pandora': 'logo-pandora.png', 'SoundCloud': 'logo-soundcloud.png' };
+  const FACE = { genz: 'aud-genz.jpg', affluent: 'aud-affluent.jpg', parents: 'aud-parents.jpg', hispanic: 'aud-hispanic.jpg', black: 'aud-black.jpg', women: 'aud-women.jpg', podcast: 'aud-educated.jpg', sports: 'aud-sports.jpg' };
+  const PHOTO = { siriusxm: 'platform-siriusxm.jpg', pandora: 'platform-pandora.jpg', soundcloud: 'platform-soundcloud.jpg' };
+  const WALL = [['stitcher','Stitcher Studios'],['earwolf','Earwolf'],['teamcoco','Team Coco'],['audiochuck','Audiochuck'],['nbcuniversal','NBCUniversal'],['crooked','Crooked'],['lastpodcast','Last Podcast Network'],['freakonomics','Freakonomics'],['own','OWN'],['loudspeakers','Loud Speakers Network'],['revolver','Revolver Podcasts'],['pitaya','Pitaya Entertainment'],['dirtymo','Dirty Mo Media'],['smartless','SmartLess'],['unwell','Unwell']];
+
+  /* ---- hero video: play the moment the page opens, on every browser we can ---- */
+  const hv = $('#heroVideo');
+  const tryPlay = () => { hv.muted = true; const p = hv.play(); if (p && p.catch) p.catch(() => {}); };   // muted set as a property too: Chromium ignores the attribute in some paths
+  tryPlay();
+  ['loadeddata', 'canplay'].forEach(ev => hv.addEventListener(ev, tryPlay, { once: true }));
+  document.addEventListener('visibilitychange', () => { if (!document.hidden) tryPlay(); });
+  const gestures = ['pointerdown', 'touchend', 'keydown'];                                            // Low Power Mode / strict autoplay: first tap starts it
+  gestures.forEach(ev => document.addEventListener(ev, tryPlay, { passive: true }));
+  hv.addEventListener('playing', () => gestures.forEach(ev => document.removeEventListener(ev, tryPlay)), { once: true });
+
+  /* ---- waveforms ---- */
+  function bars(el, n, min, max){
+    let h = '';
+    for (let i = 0; i < n; i++){
+      const ht = min + Math.round(Math.random() * (max - min));
+      h += `<i style="--h:${ht}%;--d:${(0.9 + Math.random() * 1.4).toFixed(2)}s;--o:${(-Math.random() * 2).toFixed(2)}s"></i>`;
+    }
+    el.innerHTML = h;
+  }
+  bars($('#heroEq'), 64, 20, 100);
+  document.querySelectorAll('.divider').forEach(d => bars(d, 21, 20, 100));
+
+  /* ---- headline stats with count-up ---- */
+  const fmt = n => n.toLocaleString('en-US');
+  $('#stats').innerHTML = K.headline.map(s => `
+    <div class="stat">
+      <b data-n="${s.n ?? ''}" data-suffix="${s.suffix || ''}">${s.text ? esc(s.text) : (reduce ? fmt(s.n) + (s.suffix || '') : '0' + (s.suffix || ''))}</b>
+      <span class="l">${esc(s.label)}</span><span class="w">${IMG(WHO[s.who], s.who)}</span>
+    </div>`).join('');
+  if (!reduce && 'IntersectionObserver' in window){
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (!e.isIntersecting) return;
+      const b = e.target, target = +b.dataset.n, suf = b.dataset.suffix;
+      if (!target) return io.unobserve(b);
+      const t0 = performance.now(), dur = 1400;
+      (function tick(now){
+        const p = Math.min(1, (now - t0) / dur), ease = 1 - Math.pow(1 - p, 3);
+        b.textContent = fmt(Math.round(target * ease)) + suf;
+        if (p < 1) requestAnimationFrame(tick);
+      })(t0);
+      io.unobserve(b);
+    }), { threshold: .6 });
+    document.querySelectorAll('.stat b[data-n]').forEach(b => b.dataset.n && io.observe(b));
+    setTimeout(() => document.querySelectorAll('.stat b[data-n]').forEach(b => {   // ponytail: snap if IO never fired (print, prerender)
+      if (b.dataset.n && b.textContent.startsWith('0')) { b.textContent = fmt(+b.dataset.n) + b.dataset.suffix; io.unobserve(b); }
+    }), 3000);
+  }
+
+  /* ---- audience picker ---- */
+  const A = K.audiences, keys = Object.keys(A);
+  let sel = [keys[0]];
+  const chips = $('#chips');
+  chips.innerHTML = keys.map(k => `<button type="button" class="chip" data-k="${k}" aria-pressed="${sel.includes(k)}"><img src="assets/${FACE[k]}" alt="" width="32" height="32">${esc(A[k].label)}</button>`).join('');
+  chips.addEventListener('click', e => {
+    const btn = e.target.closest('.chip'); if (!btn) return;
+    const k = btn.dataset.k;
+    if (sel.includes(k)) { if (sel.length > 1) sel = sel.filter(x => x !== k); }
+    else sel = [...sel.slice(-1), k];                       // ponytail: max two; third pick replaces the oldest
+    chips.querySelectorAll('.chip').forEach(c => c.setAttribute('aria-pressed', sel.includes(c.dataset.k)));
+    $('#hint').textContent = sel.length === 2 ? 'Showing the combined case. Tap a chip to remove it, or pick another to swap.' : 'Select up to two.';
+    render();
+  });
+
+  function build(){
+    const auds = sel.map(k => A[k]);
+    const score = {}, why = {}, seen = {};
+    auds.forEach(a => a.platforms.forEach((pl, i) => {
+      score[pl.p] = (score[pl.p] || 0) + (3 - i);
+      seen[pl.p] = (seen[pl.p] || 0) + 1;
+      if (!why[pl.p] || i < why[pl.p].i) why[pl.p] = { i, t: pl.why };
+    }));
+    const ranked = Object.keys(score).sort((a, b) => score[b] - score[a]).slice(0, 4)
+      .map(p => ({ p, name: K.platformNames[p], why: why[p].t, both: auds.length > 1 && seen[p] > 1 }));
+    const interleave = (pick, key, max) => {
+      const out = [], used = new Set();
+      for (let i = 0; i < 4 && out.length < max; i++) auds.forEach(a => {
+        const x = pick(a)[i]; if (!x || out.length >= max) return;
+        const id = key(x); if (used.has(id)) return; used.add(id); out.push(x);
+      });
+      return out;
+    };
+    const stats = interleave(a => a.stats, x => x.v + x.l, 4);
+    const sols = interleave(a => a.solutions, x => x.cat + x.card, 4)
+      .map(s => ({ ...s, ...K.solutions[s.cat][s.card] }));
+    const short = n => n.split(' ·')[0];
+    const shared = ranked.find(p => p.both);
+    const line = auds.length === 1 ? auds[0].why
+      : shared ? `${auds[0].label} and ${auds[1].label} overlap on ${short(shared.name)}: ${shared.why}`
+      : `${auds[0].label} lead on ${short(K.platformNames[auds[0].platforms[0].p])}, ${auds[1].label} on ${short(K.platformNames[auds[1].platforms[0].p])}. One buy across the network reaches both.`;
+    return { auds, ranked, stats, sols, line };
+  }
+
+  function paint(){
+    const r = build();
+    const pname = p => `${LOGO[p.p] ? IMG(LOGO[p.p], '') : ''}<span>${esc(p.name)}</span>`;
+    $('#results').innerHTML = `
+      <div class="rhead">
+        <div><p class="why">${esc(r.line)}</p><p class="for">Built for: ${r.auds.map(a => esc(a.label)).join(' + ')}</p></div>
+        <div class="faces">${sel.map(k => `<img src="assets/${FACE[k]}" alt="">`).join('')}</div>
+      </div>
+      <div class="rgrid">
+        <div class="rcol"><h4>Best-fit platforms</h4><ol class="rank">${r.ranked.map((p, i) => `
+          <li><span class="n">${i + 1}</span><div><div class="p">${pname(p)}${p.both ? '<span class="both">Fits both</span>' : ''}</div><div class="r">${esc(p.why)}</div></div></li>`).join('')}</ol></div>
+        <div class="rcol"><h4>The proof</h4><ul class="sl">${r.stats.map(s => `
+          <li><b>${esc(s.v)}</b><span>${esc(s.l)}</span><small>${esc(s.who)}</small></li>`).join('')}</ul></div>
+        <div class="rcol"><h4>Recommended solutions</h4><ul class="sol">${r.sols.map(s => `
+          <li><div class="cat">${esc(s.cat)} · ${esc(K.platformNames[s.card] || s.card)}</div><div class="t">${esc(s.t)}</div><div class="d">${esc(s.pick)}</div></li>`).join('')}</ul></div>
+      </div>`;
+  }
+  const panel = $('#results');
+  function render(){
+    if (reduce) return paint();
+    panel.classList.add('is-swapping');
+    setTimeout(() => { paint(); panel.classList.remove('is-swapping'); }, 180);
+  }
+  paint();
+
+  /* ---- moments ---- */
+  const M = K.moments; let mi = 0, onActive = () => {};
+  $('#mlist').innerHTML = M.map((m, i) => `<li style="--i:${i}"><button type="button" class="mbtn" data-i="${i}" aria-pressed="${i === 0}">${esc(m.m)}</button></li>`).join('');
+  function showMoment(i){
+    mi = i; const m = M[i];
+    $('#mread').innerHTML = `
+      <p class="m">${esc(m.m)}</p>
+      <b>${m.v}%</b>
+      <p class="who">of ${IMG(WHO[m.who], m.who)} listeners</p>
+      <div class="mbar"><i style="--w:${m.v}%"></i></div>
+      <small>SiriusXM Media, Edison Research, Custom Audio Study, 2023</small>`;
+    document.querySelectorAll('.mbtn').forEach(b => b.setAttribute('aria-pressed', +b.dataset.i === i));
+    onActive();
+  }
+  showMoment(0);
+  const ml = $('#mlist');
+  const pick = e => { const b = e.target.closest('.mbtn'); if (b && +b.dataset.i !== mi) showMoment(+b.dataset.i); };
+  ml.addEventListener('click', pick);
+  ml.addEventListener('mouseover', pick);
+  ml.addEventListener('focusin', pick);
+
+  /* ---- gaze: she looks toward the cursor, or at the hovered pill ---- */
+  // [angle°, video seconds]. 0° = right, 90° = up, 180° = left, 270° = down. One lap from "down" round to "down" again,
+  // so angles past 360 are the same directions continued (360 = right, 450 = up, 540 = left, 630 = down). Seam = 270/630.
+  const LOOK_KEYFRAMES = [
+    [270, 0.00],  // down (start)
+    [315, 0.60],  // down-right
+    [360, 1.60],  // right
+    [405, 3.00],  // up-right = REST (matches the poster)
+    [450, 4.40],  // up
+    [495, 5.20],  // up-left
+    [540, 5.90],  // left
+    [585, 6.50],  // down-left
+    [630, 6.95]   // down (end, same pose as the start)
+  ];
+  const REST = 3.0, FRAME = 1 / 24, EASE = 0.15, DEADZONE = 0.4, AREA_PAD = 80, LEAVE_MS = 600, TAP_HOLD_MS = 2000;
+  const PERIOD = LOOK_KEYFRAMES[LOOK_KEYFRAMES.length - 1][1];
+  (function gaze(){
+    const gv = $('#gazeVideo'), core = $('.core'), ring = $('.ring');
+    if (!gv) return;
+    const hoverable = matchMedia('(hover: hover)').matches;
+    gv.addEventListener('error', () => { if (!(gv.duration > 0) || reviving) gv.remove(); else hardRevive(); }, true);   // never loaded: keep the still; else rebuild
+    if (!hoverable) gv.preload = 'metadata';                            // phones fetch frames on demand, after a tap
+    if (gv.readyState >= 1) gv.currentTime = REST; else gv.addEventListener('loadedmetadata', () => { gv.currentTime = REST; }, { once: true });   // metadata may already be in (cache)
+
+    const angleToTime = deg => {
+      let a = ((deg % 360) + 360) % 360; if (a < 270) a += 360;
+      for (let i = 1; i < LOOK_KEYFRAMES.length; i++) {
+        const [a0, t0] = LOOK_KEYFRAMES[i - 1], [a1, t1] = LOOK_KEYFRAMES[i];
+        if (a <= a1) return t0 + (t1 - t0) * (a - a0) / (a1 - a0);
+      }
+      return PERIOD;
+    };
+    let centre = { x: 0, y: 0, r: 1 }, area = null;
+    const measure = () => {
+      const c = core.getBoundingClientRect(), b = ring.getBoundingClientRect();
+      centre = { x: c.left + c.width / 2, y: c.top + c.height / 2, r: c.width / 2 };
+      area = { l: b.left - AREA_PAD, t: b.top - AREA_PAD, r: b.right + AREA_PAD, b: b.bottom + AREA_PAD };
+    };
+    const angleTo = (x, y) => Math.atan2(centre.y - y, x - centre.x) * 180 / Math.PI;   // screen y grows downward, so dy is negated
+    const pillTime = el => { measure(); const b = el.getBoundingClientRect(); return angleToTime(angleTo(b.left + b.width / 2, b.top + b.height / 2)); };
+
+    // one seek in flight at a time; the newest value waits its turn
+    let seeking = false, pending = null, guard = 0, stuck = 0, reviving = false;
+    const seek = t => {
+      if (seeking) { pending = t; return; }
+      if (Math.abs(gv.currentTime - t) < FRAME / 2) return;
+      seeking = true; gv.currentTime = t;
+      clearTimeout(guard); guard = setTimeout(() => { seeking = false; if (++stuck >= 3) hardRevive(); }, 500);   // "seeked" never came: count it, rebuild after three
+    };
+    gv.addEventListener('seeked', () => { seeking = false; stuck = 0; clearTimeout(guard); if (pending !== null) { const t = pending; pending = null; seek(t); } });
+
+    // ease displayedTime toward targetTime, taking the short way round the seam
+    let target = REST, shown = REST, raf = 0;
+    const step = () => {
+      let d = target - shown;
+      if (Math.abs(d) > PERIOD / 2) d -= Math.sign(d) * PERIOD;          // 0.00 s and 6.95 s are the same pose
+      if (Math.abs(d) < FRAME) { shown = target; seek(shown); raf = 0; return; }
+      shown = ((shown + d * EASE) % PERIOD + PERIOD) % PERIOD;
+      seek(shown); raf = requestAnimationFrame(step);
+    };
+    const setTarget = t => { target = t; if (reduce) { shown = t; seek(t); return; } if (!raf) raf = requestAnimationFrame(step); };
+    const lookAt = el => setTarget(pillTime(el));
+    const idle = () => { const p = document.querySelector('.mbtn[aria-pressed="true"]'); p ? lookAt(p) : setTarget(REST); };
+
+    // coming back from another tab, app or page: WebKit may have torn the player down, or left a seek that never reports back
+    const reset = () => { clearTimeout(guard); seeking = false; pending = null; stuck = 0; cancelAnimationFrame(raf); raf = 0; };
+    const resume = () => {                                                // paint the held pose again and carry on toward the target
+      seeking = true; gv.currentTime = shown; guard = setTimeout(() => { seeking = false; if (++stuck >= 3) hardRevive(); }, 500);
+      if (Math.abs(target - shown) >= FRAME) raf = requestAnimationFrame(step);
+    };
+    function hardRevive(){                                                // reload the media, then return to the pose
+      if (reviving) return; reviving = true; reset();
+      const t = setTimeout(() => { reviving = false; }, 8000);
+      gv.addEventListener('loadeddata', () => { clearTimeout(t); reviving = false; resume(); }, { once: true });
+      gv.load();
+    }
+    let lastRevive = 0;
+    const revive = () => {
+      if (performance.now() - lastRevive < 800) return; lastRevive = performance.now();
+      if (reviving) return;
+      reset();
+      if (gv.error || gv.readyState < 2) return hardRevive();
+      const p = gv.play();                                                // muted, so allowed anywhere; wakes a suspended WebKit player
+      (p && p.then ? p : Promise.resolve()).then(() => { gv.pause(); resume(); }, () => hardRevive());
+    };
+    document.addEventListener('visibilitychange', () => { if (!document.hidden) revive(); });
+    addEventListener('pageshow', e => { if (e.persisted) revive(); });
+    addEventListener('focus', revive);                                    // Cmd-Tab back to the app fires focus, not visibilitychange
+
+    let hovered = null, leaveTimer = 0, tapTimer = 0;
+    const leaveSoon = () => { if (!leaveTimer) leaveTimer = setTimeout(() => { leaveTimer = 0; idle(); }, LEAVE_MS); };
+    onActive = () => { if (hoverable && !hovered) idle(); };
+
+    if (!hoverable) {                                                    // touch: tap a pill, look at it, back to rest after 2 s
+      ml.addEventListener('click', e => { const b = e.target.closest('.mbtn'); if (!b) return; lookAt(b); clearTimeout(tapTimer); tapTimer = setTimeout(() => setTarget(REST), TAP_HOLD_MS); });
+      return;
+    }
+    ml.addEventListener('mouseover', e => { const b = e.target.closest('.mbtn'); if (b) { hovered = b; lookAt(b); } });
+    ml.addEventListener('mouseout',  e => { if (e.target.closest('.mbtn')) hovered = null; });
+    ml.addEventListener('focusin',   e => { const b = e.target.closest('.mbtn'); if (b) { hovered = b; lookAt(b); } });
+    ml.addEventListener('focusout',  () => { hovered = null; idle(); });
+    if (reduce) return;                                                  // reduced motion: pill poses only, no cursor tracking
+    document.addEventListener('mousemove', e => {
+      if (!area) measure();
+      const inside = e.clientX >= area.l && e.clientX <= area.r && e.clientY >= area.t && e.clientY <= area.b;
+      if (!inside) return leaveSoon();
+      clearTimeout(leaveTimer); leaveTimer = 0;
+      if (hovered) return;
+      const dist = Math.hypot(e.clientX - centre.x, e.clientY - centre.y);
+      setTarget(dist < centre.r * DEADZONE ? REST : angleToTime(angleTo(e.clientX, e.clientY)));
+    }, { passive: true });
+    document.documentElement.addEventListener('mouseleave', leaveSoon, { passive: true });
+    addEventListener('resize', measure, { passive: true });
+    addEventListener('scroll', measure, { passive: true });
+  })();
+
+  /* ---- platform cards ---- */
+  const P = K.platforms;
+  const cell = (k, v) => `<div><dt>${k}</dt><dd${v ? '' : ' class="none"'}>${v ? esc(v) : 'Not in kit'}</dd></div>`;
+  const LOGO_H = { siriusxm: 26, pandora: 26, soundcloud: 20, podcasts: 32 };
+  $('#pgrid').innerHTML = Object.entries(P).map(([k, p]) => `
+    <article class="pcard">
+      ${k === 'podcasts'
+        ? `<div class="pwall" aria-label="Podcast networks in the kit">${WALL.map(([f, n]) => `<div>${IMG('logo-' + f + '.png', n)}</div>`).join('')}</div>`
+        : `<div class="pphoto">${IMG(PHOTO[k], '')}</div>`}
+      <div class="phead"><div class="net">${p.network ? IMG(LOGO.streaming, p.network) : ''}</div><h3 class="sr">${esc(p.name)}</h3>${IMG(LOGO[k], p.name, 'plogo', LOGO_H[k])}<p class="tag">${esc(p.tagline)}</p></div>
+      <div class="phero">${p.hero.map(h => `<div><b>${esc(h.v)}</b><span>${esc(h.l)}</span></div>`).join('')}</div>
+      <dl class="demo">${cell('Gender', p.demo.gender)}${cell('Income', p.demo.income)}${cell('Age', p.demo.age)}${cell('Education', p.demo.education)}</dl>
+      <details><summary>Engagement &amp; receptivity</summary><div class="er">
+        <div><h5>Engagement</h5><ul>${p.engagement.map(x => `<li><b>${esc(x.v)}</b><span>${esc(x.l)}</span></li>`).join('')}</ul></div>
+        <div><h5>Receptivity</h5><ul>${p.receptivity.map(x => `<li><b>${esc(x.v)}</b><span>${esc(x.l)}</span></li>`).join('')}</ul></div>
+      </div></details>
+    </article>`).join('');
+  $('#partners').innerHTML = Object.entries(K.partners).map(([k, p]) => `
+    <article><div class="ph">${IMG('partner-' + k + '.jpg', '')}</div>
+      <div class="pb">${IMG(LOGO[k], p.name)}<b>${esc(p.v)}</b><span>${esc(p.l)}</span><em>${esc(p.pos)}</em></div></article>`).join('');
+
+  /* ---- services ---- */
+  const S = K.services;
+  const scard = (img, title, marks, body) => `<div class="scard"><div class="ph">${IMG(img, '')}</div><div class="body"><h3>${title}</h3><div class="marks">${marks}</div>${body}</div></div>`;
+  $('#sgrid').innerHTML =
+    scard('service-insights.jpg', S.insights.title, IMG('logo-soundboard.png', 'Soundboard') + IMG('logo-podsurvey.png', 'Podsurvey', 'tall'),
+      `<p>Two opted-in research panels behind every recommendation.</p><ul>${S.insights.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>`) +
+    scard('service-cultural.jpg', S.cultural.title, IMG('logo-fluency.png', 'fluency'),
+      `<p>${esc(S.cultural.lead)}</p><ul>${S.cultural.items.map(i => `<li>${esc(i)}</li>`).join('')}</ul>`) +
+    scard('service-creative.jpg', S.creative.title, IMG('logo-studioresonate.png', 'Studio Resonate'),
+      `<p>${esc(S.creative.lead)}</p><div class="tags">${S.creative.items.map(i => `<span>${esc(i)}</span>`).join('')}</div>`) +
+    scard('service-events.jpg', S.events.title, IMG(LOGO.siriusxm, 'SiriusXM') + IMG(LOGO.streaming, 'SiriusXM Streaming Network') + IMG(LOGO.podcasts, 'SiriusXM Podcast Network'),
+      `<p>${esc(S.events.lead)}</p><div class="two">${S.events.stats.map(s => `<div><b>${esc(s.v)}</b><span>${esc(s.l)}</span></div>`).join('')}</div>
+       <ul>${Object.entries(S.events.lineup).map(([k, v]) => `<li><strong style="color:var(--fg)">${esc(k)}:</strong> ${v.map(esc).join(', ')}</li>`).join('')}</ul>`);
+  $('#proof').innerHTML = K.targeting.map(t => `<span><b>${esc(t.v)}</b>${esc(t.l)}</span>`).join('') +
+    `<span><b>${esc(K.measurement.v)}</b>${esc(K.measurement.l)} for full-funnel measurement</span>`;
+
+  /* ---- sources ---- */
+  $('#sources').innerHTML = K.sources.map(s => `<li>${esc(s)}</li>`).join('');
+})();
+</script>
+</body>
+</html>
